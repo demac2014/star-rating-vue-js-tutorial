@@ -1,11 +1,24 @@
 <template>
   <div class="rating">
     <ul class="list">
-      <li v-test="{ id: 'star' }" :key="star" v-for="star in maxStars" :class="{ 'active': star <= stars }" @click="rate(star)" class="star">
-        <icon v-test="{ id: 'icon' }" scale="2" :name="star <= stars ? 'star' : 'regular/star'"/>
+      <li
+        v-test="{ id: 'star' }"
+        :key="star"
+        v-for="star in maxStars"
+        :class="{ active: star <= stars }"
+        @click="rate(star)"
+        class="star"
+      >
+        <icon
+          v-test="{ id: 'icon' }"
+          scale="2"
+          :name="star <= stars ? 'star' : 'regular/star'"
+        />
       </li>
     </ul>
-    <span v-test="{ id: 'counter' }" v-if="hasCounter">{{ stars }} of {{ maxStars }}</span>
+    <span v-test="{ id: 'counter' }" v-if="hasCounter">
+      {{ stars }} of {{ maxStars }}
+    </span>
   </div>
 </template>
 
